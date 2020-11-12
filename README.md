@@ -214,13 +214,21 @@ work-around.
 
 ## How to Fix
 
-TODO Make cleaner.
 
-Follow GitHub issue below, but need to use
+Run the following commands when in your python virtual environment to build from source
+You will need to first install CMake to run these commands
 ```
-cmake .. -DBUILD_EXAMPLES=false -DBUILD_PYTHON_BINDINGS=true
+$ git clone https://github.com/IntelRealSense/librealsense
+$ mkdir build
+$ cd build
+$ cmake .. -DBUILD_EXAMPLES=false -DBUILD_PYTHON_BINDINGS=true
 ```
-or else compile errors will ensue. Connor needed to comment out sections in
+This will create a `CMakeLists.txt` file in your librealsense directory.
+
+More info on what this fix is doing is included at the following link. DO NOT run ```sudo make install``` if you reference this link.
+
+
+Connor needed to comment out sections in
 `CMakeLists.txt` file because the `-DBUILD_EXAMPLES=false` wasn't working...?
 
 Once compile is successful and complete, DO NOT DO `sudo make install`.
